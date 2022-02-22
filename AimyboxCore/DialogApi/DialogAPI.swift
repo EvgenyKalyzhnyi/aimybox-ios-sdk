@@ -84,10 +84,9 @@ extension DialogAPI {
 
     private
     func handle(response: TResponse, sender aimybox: Aimybox) {
-        let handleOperation = DialogAPIHandleOperation<Self>(response: response, dialogAPI: self, aimybox: aimybox)
+        // Данная логика реализована внутри приложения в VoiceAssistantService
+//        let handleOperation = DialogAPIHandleOperation<Self>(response: response, dialogAPI: self, aimybox: aimybox)
         notify?(.success(.responseReceived(response)))
-        operationQueue.addOperation(handleOperation)
-
+//        operationQueue.addOperation(handleOperation)
     }
-
 }

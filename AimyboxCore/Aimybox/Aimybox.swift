@@ -40,7 +40,13 @@ protocol Aimybox: class {
     */
     func standby()
     /**
+     */
+    func applyProcessing()
+    /**
     */
+    func stopSpeaking()
+    /**
+     */
     func speak(speech: AimyboxSpeech) throws
     /**
     */
@@ -48,6 +54,9 @@ protocol Aimybox: class {
     /**
     */
     func speak(speech: [AimyboxSpeech], next action: AimyboxNextAction) throws
+    /**
+    */
+    func cancelPendingRequest()
     /**
     */
     func cancelSynthesis()

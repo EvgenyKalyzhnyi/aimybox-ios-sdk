@@ -87,6 +87,7 @@ class AimyboxConcrete<TDialogAPI, TConfig>: Aimybox where TConfig: AimyboxConfig
         config.dialogAPI.send(query: query, sender: self)
     }
 
+    public
     func cancelPendingRequest() {
         guard state == .processing else {
             return
@@ -135,7 +136,13 @@ class AimyboxConcrete<TDialogAPI, TConfig>: Aimybox where TConfig: AimyboxConfig
             break
         }
     }
+    
+    public
+    func applyProcessing() {
+        state = .processing
+    }
 
+    public
     func stopSpeaking() {
         guard case .speaking = state else {
             return
