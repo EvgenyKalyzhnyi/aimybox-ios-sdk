@@ -52,16 +52,18 @@ class AimyboxConcrete<TDialogAPI, TConfig>: Aimybox where TConfig: AimyboxConfig
         stopSpeaking()
         cancelRecognition()
 
-        state = .listening
+        state = .processing
 
-        config.speechToText.startRecognition()
+        config.speechToText.startRecognition(didStart: { [weak self] in
+            self?.state = .listening
+        })
     }
 
     public
     func stopRecognition() {
-        guard case .listening = state else {
-            return
-        }
+//        guard case .listening = state else {
+//            return
+//        }
         config.speechToText.stopRecognition()
     }
 

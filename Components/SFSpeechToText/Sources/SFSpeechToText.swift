@@ -85,7 +85,7 @@ class SFSpeechToText: AimyboxComponent, SpeechToText {
     // MARK: - SpechToTextProtocol conformance
 
     public
-    func startRecognition() {
+    func startRecognition(didStart: (() -> Void)?) {
 
         checkPermissions { [weak self] result in
             switch result {

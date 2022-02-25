@@ -32,7 +32,6 @@
 		55ED5EFF23AD0FF4007F4D01 /* AimyboxAudioReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5EFE23AD0FF4007F4D01 /* AimyboxAudioReply.swift */; };
 		55ED5F0123AD1002007F4D01 /* AimyboxImageReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5F0023AD1002007F4D01 /* AimyboxImageReply.swift */; };
 		55ED5F0323AD1011007F4D01 /* AimyboxButtonsReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5F0223AD1010007F4D01 /* AimyboxButtonsReply.swift */; };
-		6F5935A32D81F4B3ACCFDA4B /* Pods_YandexSpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 661ADAA6029247A0E5B1B218 /* Pods_YandexSpeechKit.framework */; };
 		9709BCDF23AB8761005C47C2 /* FakeTextReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9709BCDE23AB8761005C47C2 /* FakeTextReply.swift */; };
 		9709BCE123ABA5E2005C47C2 /* TextToSpeechCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9709BCE023ABA5E2005C47C2 /* TextToSpeechCoreTests.swift */; };
 		97233FDD23898F2C0050E37F /* AimyboxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 97233FDB23898F2C0050E37F /* AimyboxCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -256,8 +255,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4D46AEAA3C7D73B90D3BD6CE /* Pods-YandexSpeechKitTests-YandexSpeechKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexSpeechKitTests-YandexSpeechKit.release.xcconfig"; path = "Target Support Files/Pods-YandexSpeechKitTests-YandexSpeechKit/Pods-YandexSpeechKitTests-YandexSpeechKit.release.xcconfig"; sourceTree = "<group>"; };
-		503D96691A23AF12EF04CF2B /* Pods-YandexSpeechKit.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexSpeechKit.testing.xcconfig"; path = "Target Support Files/Pods-YandexSpeechKit/Pods-YandexSpeechKit.testing.xcconfig"; sourceTree = "<group>"; };
 		5527AA1423DF58FD00153999 /* libBoringSSL-GRPC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libBoringSSL-GRPC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5527AA9B23E06E7100153999 /* YandexSpeechToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexSpeechToText.swift; sourceTree = "<group>"; };
 		5529C08723E4842400DDA444 /* WAVFileGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAVFileGenerator.swift; sourceTree = "<group>"; };
@@ -283,10 +280,6 @@
 		55ED5EFE23AD0FF4007F4D01 /* AimyboxAudioReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimyboxAudioReply.swift; sourceTree = "<group>"; };
 		55ED5F0023AD1002007F4D01 /* AimyboxImageReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimyboxImageReply.swift; sourceTree = "<group>"; };
 		55ED5F0223AD1010007F4D01 /* AimyboxButtonsReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimyboxButtonsReply.swift; sourceTree = "<group>"; };
-		55ED677D71DA252015044486 /* Pods-YandexSpeechKitTests-YandexSpeechKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexSpeechKitTests-YandexSpeechKit.debug.xcconfig"; path = "Target Support Files/Pods-YandexSpeechKitTests-YandexSpeechKit/Pods-YandexSpeechKitTests-YandexSpeechKit.debug.xcconfig"; sourceTree = "<group>"; };
-		661ADAA6029247A0E5B1B218 /* Pods_YandexSpeechKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexSpeechKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A8AA06F95AB334B901796B9 /* Pods-YandexSpeechKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexSpeechKit.release.xcconfig"; path = "Target Support Files/Pods-YandexSpeechKit/Pods-YandexSpeechKit.release.xcconfig"; sourceTree = "<group>"; };
-		7FBB02CC69F1B0073A580A77 /* Pods_exampleasdf_YandexSpeechKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_exampleasdf_YandexSpeechKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9709BCDE23AB8761005C47C2 /* FakeTextReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTextReply.swift; sourceTree = "<group>"; };
 		9709BCE023ABA5E2005C47C2 /* TextToSpeechCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechCoreTests.swift; sourceTree = "<group>"; };
 		97233FD823898F2C0050E37F /* AimyboxCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AimyboxCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -360,9 +353,6 @@
 		97C75B6223AC00F9006C209C /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C75B6423AC00F9006C209C /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		97C75B6523AC00F9006C209C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D35621084486B4E8985FC604 /* Pods-YandexSpeechKitTests-YandexSpeechKit.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexSpeechKitTests-YandexSpeechKit.testing.xcconfig"; path = "Target Support Files/Pods-YandexSpeechKitTests-YandexSpeechKit/Pods-YandexSpeechKitTests-YandexSpeechKit.testing.xcconfig"; sourceTree = "<group>"; };
-		E50B0495B0460A63C3432067 /* Pods-YandexSpeechKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexSpeechKit.debug.xcconfig"; path = "Target Support Files/Pods-YandexSpeechKit/Pods-YandexSpeechKit.debug.xcconfig"; sourceTree = "<group>"; };
-		FAE7E6221C8EAB323C7D5D53 /* Pods_exampleasdf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_exampleasdf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,7 +360,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F5935A32D81F4B3ACCFDA4B /* Pods_YandexSpeechKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,9 +780,6 @@
 			isa = PBXGroup;
 			children = (
 				5527AA1423DF58FD00153999 /* libBoringSSL-GRPC.a */,
-				FAE7E6221C8EAB323C7D5D53 /* Pods_exampleasdf.framework */,
-				7FBB02CC69F1B0073A580A77 /* Pods_exampleasdf_YandexSpeechKit.framework */,
-				661ADAA6029247A0E5B1B218 /* Pods_YandexSpeechKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -811,12 +797,6 @@
 		D30EA6802D3F15B8B507495B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E50B0495B0460A63C3432067 /* Pods-YandexSpeechKit.debug.xcconfig */,
-				503D96691A23AF12EF04CF2B /* Pods-YandexSpeechKit.testing.xcconfig */,
-				6A8AA06F95AB334B901796B9 /* Pods-YandexSpeechKit.release.xcconfig */,
-				55ED677D71DA252015044486 /* Pods-YandexSpeechKitTests-YandexSpeechKit.debug.xcconfig */,
-				D35621084486B4E8985FC604 /* Pods-YandexSpeechKitTests-YandexSpeechKit.testing.xcconfig */,
-				4D46AEAA3C7D73B90D3BD6CE /* Pods-YandexSpeechKitTests-YandexSpeechKit.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -879,7 +859,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 554D7ACA23D9B61400E90C7E /* Build configuration list for PBXNativeTarget "YandexSpeechKit" */;
 			buildPhases = (
-				4A4F8F2FD5203CAA9AEFC333 /* [CP] Check Pods Manifest.lock */,
 				554D7AB423D9B61400E90C7E /* Headers */,
 				554D7AB523D9B61400E90C7E /* Sources */,
 				554D7AB623D9B61400E90C7E /* Frameworks */,
@@ -1248,31 +1227,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4A4F8F2FD5203CAA9AEFC333 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YandexSpeechKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		554D7AB523D9B61400E90C7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1513,7 +1467,6 @@
 /* Begin XCBuildConfiguration section */
 		554D7ACB23D9B61400E90C7E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E50B0495B0460A63C3432067 /* Pods-YandexSpeechKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1542,7 +1495,6 @@
 		};
 		554D7ACC23D9B61400E90C7E /* Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 503D96691A23AF12EF04CF2B /* Pods-YandexSpeechKit.testing.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1571,7 +1523,6 @@
 		};
 		554D7ACD23D9B61400E90C7E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A8AA06F95AB334B901796B9 /* Pods-YandexSpeechKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

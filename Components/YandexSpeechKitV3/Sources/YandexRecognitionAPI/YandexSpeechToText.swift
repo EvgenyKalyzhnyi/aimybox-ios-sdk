@@ -118,7 +118,7 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
     }
 
     public
-    func startRecognition() {
+    func startRecognition(didStart: (() -> Void)?) {
         guard wasSpeechStopped else {
             return
         }
@@ -127,7 +127,7 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
         checkPermissions { [weak self] result in
             switch result {
             case .success:
-                self?.onPermissionGranted()
+                self?.onPermissionGranted(didStart: didStart)
             default:
                 self?.notify?(result)
             }
@@ -158,7 +158,7 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
     // MARK: - Internals
 
     private
-    func onPermissionGranted() {
+    func onPermissionGranted(didStart: (() -> Void)?) {
         prepareRecognition()
         guard !wasSpeechStopped else {
             return
@@ -167,6 +167,9 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
         do {
             try audioEngine.start()
             notify?(.success(.recognitionStarted))
+            DispatchQueue.main.async {
+                didStart?()
+            }
         } catch {
             notify?(.failure(.microphoneUnreachable))
         }
@@ -287,21 +290,14 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
 
     private
     func checkPermissions(_ completion: @escaping (SpeechToTextResult) -> Void ) {
-        var recordAllowed = false
-        let permissionsDispatchGroup = DispatchGroup()
-
-        permissionsDispatchGroup.enter()
         // Microphone recording permission
         AVAudioSession.sharedInstance().requestRecordPermission { isAllowed in
-            recordAllowed = isAllowed
-            permissionsDispatchGroup.leave()
-        }
-
-        permissionsDispatchGroup.notify(queue: .global(qos: .userInteractive)) {
-            if recordAllowed {
-                completion(.success(.recognitionPermissionsGranted))
-            } else {
-                completion(.failure(.microphonePermissionReject))
+            DispatchQueue.global(qos: .userInteractive).async {
+                if isAllowed {
+                    completion(.success(.recognitionPermissionsGranted))
+                } else {
+                    completion(.failure(.microphonePermissionReject))
+                }
             }
         }
     }
