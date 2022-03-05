@@ -85,7 +85,7 @@ class SFSpeechToText: AimyboxComponent, SpeechToText {
     // MARK: - SpechToTextProtocol conformance
 
     public
-    func startRecognition(didStart: (() -> Void)?) {
+    func startRecognition() {
 
         checkPermissions { [weak self] result in
             switch result {
@@ -121,6 +121,15 @@ class SFSpeechToText: AimyboxComponent, SpeechToText {
             }
         }
     }
+    
+    public
+    func prepareAudioSession() {
+        prepareAudioEngineForMultiRoute {
+            if !$0 {
+                notify?(.failure(.microphoneUnreachable))
+            }
+        }
+    }
 
     // MARK: - Internals
 
@@ -139,12 +148,6 @@ class SFSpeechToText: AimyboxComponent, SpeechToText {
     func prepareRecognition() {
         guard let notify = notify else {
             return
-        }
-
-        prepareAudioEngineForMultiRoute {
-            if !$0 {
-                notify(.failure(.microphoneUnreachable))
-            }
         }
 
         // Setup Speech Recognition request

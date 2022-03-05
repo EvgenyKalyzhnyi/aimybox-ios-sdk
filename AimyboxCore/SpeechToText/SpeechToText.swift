@@ -16,7 +16,7 @@ protocol SpeechToText: AimyboxComponent {
     /**
     Start recognition.
     */
-    func startRecognition(didStart: (() -> Void)?)
+    func startRecognition()
     /**
     Stop audio recording, but await for final result.
     */
@@ -25,6 +25,10 @@ protocol SpeechToText: AimyboxComponent {
     Cancel recognition entirely and abandon all results.
     */
     func cancelRecognition()
+    /**
+    Prepare audio session before Speech
+     */
+    func prepareAudioSession()
     /**
     Used to notify *Aimybox* state machine about events.
     */

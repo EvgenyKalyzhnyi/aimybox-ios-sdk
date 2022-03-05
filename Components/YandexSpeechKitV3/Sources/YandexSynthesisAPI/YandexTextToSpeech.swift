@@ -92,13 +92,7 @@ class YandexTextToSpeech: AimyboxComponent, TextToSpeech {
     func synthesize(contentsOf speeches: [AimyboxSpeech]) {
         isCancelled = false
         operationQueue.addOperation { [weak self] in
-            self?.prepareAudioEngineForMultiRoute { engineIsReady in
-                if engineIsReady {
-                    self?.synthesize(speeches)
-                } else {
-                    self?.notify?(.failure(.speakersUnavailable))
-                }
-            }
+            self?.synthesize(speeches)
         }
         operationQueue.waitUntilAllOperationsAreFinished()
     }

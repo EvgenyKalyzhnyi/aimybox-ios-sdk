@@ -118,7 +118,7 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
     }
 
     public
-    func startRecognition(didStart: (() -> Void)?) {
+    func startRecognition() {
         guard wasSpeechStopped else {
             return
         }
@@ -127,7 +127,7 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
         checkPermissions { [weak self] result in
             switch result {
             case .success:
-                self?.onPermissionGranted(didStart: didStart)
+                self?.onPermissionGranted()
             default:
                 self?.notify?(result)
             }
@@ -154,11 +154,20 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
             self?.notify?(.success(.recognitionCancelled))
         }
     }
+    
+    public
+    func prepareAudioSession() {
+        prepareAudioEngineForMultiRoute {
+            if !$0 {
+                notify?(.failure(.microphoneUnreachable))
+            }
+        }
+    }
 
     // MARK: - Internals
 
     private
-    func onPermissionGranted(didStart: (() -> Void)?) {
+    func onPermissionGranted() {
         prepareRecognition()
         guard !wasSpeechStopped else {
             return
@@ -167,9 +176,6 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
         do {
             try audioEngine.start()
             notify?(.success(.recognitionStarted))
-            DispatchQueue.main.async {
-                didStart?()
-            }
         } catch {
             notify?(.failure(.microphoneUnreachable))
         }
@@ -178,16 +184,6 @@ class YandexSpeechToText: AimyboxComponent, SpeechToText {
     private
     // swiftlint:disable:next function_body_length superfluous_disable_command
     func prepareRecognition() {
-        guard let notify = notify else {
-            return
-        }
-
-        prepareAudioEngineForMultiRoute {
-            if !$0 {
-                notify(.failure(.microphoneUnreachable))
-            }
-        }
-
         // swiftlint:disable:next closure_body_length
         recognitionAPI.openStream { [audioEngine, weak self, audioFormat] stream in
             let inputNode = audioEngine.inputNode

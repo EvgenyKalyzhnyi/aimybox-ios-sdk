@@ -44,6 +44,8 @@ class AimyboxConcrete<TDialogAPI, TConfig>: Aimybox where TConfig: AimyboxConfig
         self.config.dialogAPI.notify = { [weak self] event in
             self?.onDialogAPI(event)
         }
+        
+        config.speechToText.prepareAudioSession()
     }
 
     // MARK: - Text to speech lifecycle
@@ -52,18 +54,16 @@ class AimyboxConcrete<TDialogAPI, TConfig>: Aimybox where TConfig: AimyboxConfig
         stopSpeaking()
         cancelRecognition()
 
-        state = .processing
+        state = .listening
 
-        config.speechToText.startRecognition(didStart: { [weak self] in
-            self?.state = .listening
-        })
+        config.speechToText.startRecognition()
     }
 
     public
     func stopRecognition() {
-//        guard case .listening = state else {
-//            return
-//        }
+        guard case .listening = state else {
+            return
+        }
         config.speechToText.stopRecognition()
     }
 
